@@ -12,39 +12,39 @@ Construir un modelo de Deep Learning capaz de diferenciar entre radiografías de
 
 ## 🗂️ Estructura del Proyecto
 
-pneumonia-dx/
-│
-├── .venv/                        # Virtual environment
-│
-├── 📁 data/                      # Datasets
-│   ├── raw/                     # Raw data (original chest X-rays)
-│   └── processed/               # Preprocessed and augmented data
-│
-├── 📁 notebooks/                 # Jupyter notebooks for analysis
-│   └── eda_model_exploration.ipynb
-│
-├── 📁 models/                    # Trained models (.h5, .pt, etc.)
-│   └── best_model.h5
-│
-├── 📁 reports/                   # Evaluation results, plots, confusion matrices
-│   └── confusion_matrix.png
-│
-├── 📁 src/                       # Source code
-│   ├── data_loader/             # Data loading and preprocessing
-│   │   └── dataset.py
-│   ├── training/                # Training loop, metrics, validation
-│   │   └── train.py
-│   ├── utils/                   # Utility functions (visualization, helpers)
-│   │   └── helpers.py
-│   └── interface/               # Interface code (e.g., Streamlit, Flask)
-│       └── app.py
-│
-├── 📁 scripts/                   # Automation scripts
-│   └── download_dataset.py      # Script to download Kaggle dataset
-│
-├── 📄 requirements.txt          # Project dependencies
-├── 📄 README.md                 # Documentation and project overview
-└── 📄 LICENSE                   # License file
+pneumonia-dx/ <br/>
+│ <br/>
+├── .venv/                        # Virtual environment <br/>
+│ <br/>
+├── 📁 data/                      # Datasets <br/> 
+│   ├── raw/                     # Raw data (original chest X-rays) <br/>
+│   └── processed/               # Preprocessed and augmented data <br/>
+│ <br/>
+├── 📁 notebooks/                 # Jupyter notebooks for analysis <br/>
+│   └── eda_model_exploration.ipynb <br/>
+│ <br/>
+├── 📁 models/                    # Trained models (.h5, .pt, etc.) <br/>
+│   └── best_model.h5 <br/>
+│ <br/>
+├── 📁 reports/                   # Evaluation results, plots, confusion matrices <br/>
+│   └── confusion_matrix.png <br/>
+│ <br/>
+├── 📁 src/                       # Source code <br/>
+│   ├── data_loader/             # Data loading and preprocessing <br/>
+│   │   └── dataset.py <br/>
+│   ├── training/                # Training loop, metrics, validation <br/>
+│   │   └── train.py <br/>
+│   ├── utils/                   # Utility functions (visualization, helpers) <br/>
+│   │   └── helpers.py <br/>
+│   └── interface/               # Interface code (e.g., Streamlit, Flask) <br/>
+│       └── app.py <br/>
+│ <br/>
+├── 📁 scripts/                   # Automation scripts <br/>
+│   └── download_dataset.py      # Script to download Kaggle dataset <br/>
+│ <br/>
+├── 📄 requirements.txt          # Project dependencies <br/>
+├── 📄 README.md                 # Documentation and project overview <br/>
+└── 📄 LICENSE                   # License file <br/>
 
 
 
