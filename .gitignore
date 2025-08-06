@@ -1,0 +1,68 @@
+# =============================
+# ⚙️ ENTORNOS VIRTUALES
+# =============================
+.venv/
+env/
+venv/
+
+# =============================
+# 🐍 ARCHIVOS PYTHON COMPILADOS
+# =============================
+__pycache__/
+*.py[cod]
+*.so
+
+# =============================
+# 🔐 CONFIGURACIÓN Y SECRETS
+# =============================
+*.env
+kaggle/kaggle.json
+
+# =============================
+# 📓 ARCHIVOS DE JUPYTER
+# =============================
+.ipynb_checkpoints/
+
+# =============================
+# 🧪 LOGS Y ARCHIVOS TEMPORALES
+# =============================
+*.log
+*.out
+*.tmp
+
+# =============================
+# 📂 DATASETS LOCALES
+# =============================
+data/
+datasets/
+
+# =============================
+# 🧠 PESOS Y MODELOS ENTRENADOS
+# =============================
+*.h5
+*.hdf5
+*.ckpt
+*.pb
+*.tflite
+*.onnx
+
+# =============================
+# 📊 TENSORBOARD LOGS
+# =============================
+logs/
+tensorboard_logs/
+
+# =============================
+# 💻 CONFIGURACIÓN DE IDEs
+# =============================
+.vscode/
+.idea/
+
+# =============================
+# 🗂 ARCHIVOS DE SISTEMA
+# =============================
+*.DS_Store
+*.swp
+Thumbs.db
+ehthumbs.db
+desktop.ini
