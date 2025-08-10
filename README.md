@@ -25,42 +25,42 @@ Desarrollar un modelo de Deep Learning capaz de diferenciar entre radiografías 
 
 ## 🗂️ Estructura del Proyecto
 
-pneumonia-dx/
+pneumonia-dx
+
+├── 📁 data/              # Dataset  
+│   ├── raw/             # Radiografías originales  
+│   └── processed/       # Imágenes preprocesadas y aumentadas  
 │
-├── 📁 data/              # Datasets
-│   ├── raw/             # Radiografías originales
-│   └── processed/       # Imágenes preprocesadas y aumentadas
+├── 📁 models/            # Modelos entrenados  
+│   ├── mejor_modelo.h5  
+│   └── modelo_final.h5  
 │
-├── 📁 models/            # Modelos entrenados
-│   ├── mejor_modelo.h5
-│   └── modelo_final.h5
+├── 📁 notebooks/         # Exploración y análisis (EDA)  
+│   └── eda_model_exploration.ipynb  
 │
-├── 📁 notebooks/         # Exploración y análisis (EDA)
-│   └── eda_model_exploration.ipynb
+├── 📁 reports/           # Resultados: métricas, gráficas  
+│   ├── confusion_matrix.png  
+│   └── entrenamiento_vs_validacion.png  
 │
-├── 📁 reports/           # Resultados: métricas, gráficas
-│   ├── confusion_matrix.png
-│   └── entrenamiento_vs_validacion.png
+├── 📁 src/               # Código fuente del proyecto  
+│   ├── cargar_datos.py  
+│   ├── modelo_cnn.py  
+│   └── entrena_modelo.py  
 │
-├── 📁 src/               # Código fuente del proyecto
-│   ├── cargar_datos.py
-│   ├── modelo_cnn.py
-│   └── entrena_modelo.py
+├── 📁 docs/              # Documentación técnica de cada módulo  
+│   ├── 01_carga_dataset.md  
+│   ├── 02_preprocesamiento.md  
+│   ├── 03_modelo_cnn.md  
+│   ├── 04_entrenamiento.md  
+│   ├── 05_visualizacion.md  
+│   └── 06_interfaz_despliegue.md  
 │
-├── 📁 docs/              # Documentación técnica de cada módulo
-│   ├── 01_carga_dataset.md
-│   ├── 02_preprocesamiento.md
-│   ├── 03_modelo_cnn.md
-│   ├── 04_entrenamiento.md
-│   ├── 05_visualizacion.md
-│   └── 06_interfaz_despliegue.md
+├── 📁 scripts/           # Automatizaciones  
+│   └── download_dataset.py  
 │
-├── 📁 scripts/           # Automatizaciones
-│   └── download_dataset.py
-│
-├── 📄 requirements.txt   # Dependencias
-├── 📄 README.md          # Visión general del proyecto
-└── 📄 LICENSE            # Licencia de uso
+├── 📄 requirements.txt   # Dependencias  
+├── 📄 README.md          # Visión general del proyecto  
+└── 📄 LICENSE            #
 
 
 
@@ -76,14 +76,12 @@ pneumonia-dx/
 | `05_visualizacion.md`       | Visualización de métricas y análisis de resultados  |
 | `06_interfaz_despliegue.md` | Despliegue de interfaz web con Streamlit (opcional) |
 
-
-
-
+---
 
 
 ---
 
-# 🧪 Fases del Proyecto
+## 🧪 Fases del Proyecto
 
 | Etapa | Descripción                                         | Estado         |
 | ----- | --------------------------------------------------- | -------------- |
@@ -91,9 +89,29 @@ pneumonia-dx/
 | 2️⃣   | Preprocesamiento de imágenes y `ImageDataGenerator` | ✅ Completado   |
 | 3️⃣   | Construcción del modelo CNN                         | ✅ Completado   |
 | 4️⃣   | Entrenamiento con Early Stopping y validación       | ✅ Completado   |
-| 5️⃣   | Evaluación y visualización de métricas              | 🔄 En progreso |
-| 6️⃣   | Despliegue web con Streamlit o Flask                | ⏳ Pendiente    |
+| 5️⃣   | Evaluación inicial y análisis de métricas           | ✅ Completado   |
+| 6️⃣   | Optimización de umbral y reducción de falsos positivos | 🔄 En progreso |
+| 7️⃣   | Despliegue web con Streamlit o Flask                | ⏳ Pendiente    |
 
+---
+
+## 📦 Dataset Utilizado
+
+**Chest X-Ray Pneumonia**:  
+- Fuente: Kaggle  
+- Clases: `NORMAL`, `PNEUMONIA`  
+- División: `/train`, `/test`, `/val` (o `validation_split` en código)
+
+---
+
+## ⚙️ Requisitos del Entorno
+
+```bash
+Python 3.10+
+TensorFlow >= 2.10
+matplotlib
+numpy
+pandas
 
 ---
 
@@ -118,6 +136,31 @@ pandas
 
 ## 👇 Instalación Rapida
 pip install -r requirements.txt
+
+
+## 🚀 Próximas Mejoras
+
+- **Mejorar balance de clases**
+  - Ajustar umbral de decisión para reducir falsos positivos.
+  - Usar `class_weight` y aumento de datos de la clase NORMAL.
+
+- **Aumentar robustez**
+  - Entrenar con más variedad de imágenes.
+  - Aplicar data augmentation avanzada.
+  - Probar arquitecturas como EfficientNet o DenseNet.
+
+- **Interpretabilidad**
+  - Integrar Grad-CAM para resaltar áreas de interés en radiografías.
+
+- **Integración clínica**
+  - Interfaz web clara para carga de imágenes y reporte automático.
+  - Opción de exportar reportes PDF.
+  - Doble validación médica.
+
+- **Seguridad y regulaciones**
+  - Registro de predicciones.
+  - Cumplimiento
+
 
 
 ## ✍️ Autor
