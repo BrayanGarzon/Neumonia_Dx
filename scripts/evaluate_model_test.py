@@ -70,16 +70,36 @@ plt.title("Matriz de Confusión")
 plt.savefig(os.path.join(RESULTS_DIR, "confusion_matrix_test.png"))
 plt.close()
 
+# # ==============================
+# # 7. Guardar gráficas de métricas
+# # ==============================
+# metrics_names = ["precision", "recall", "f1-score"]
+# metrics_values = [report["PNEUMONIA"][m] for m in metrics_names]  # Cambiar nombre de clase si es distinto
+
+# plt.bar(metrics_names, metrics_values, color=["#4CAF50", "#2196F3", "#FF5722"])
+# plt.ylim(0, 1)
+# plt.title(f"Métricas de Rendimiento - Neumonía (Umbral={THRESHOLD})")
+# plt.savefig(os.path.join(RESULTS_DIR, "metrics_bar_test.png"))
+# plt.close()
+
 # ==============================
 # 7. Guardar gráficas de métricas
 # ==============================
 metrics_names = ["precision", "recall", "f1-score"]
-metrics_values = [report["PNEUMONIA"][m] for m in metrics_names]  # Cambiar nombre de clase si es distinto
+
+# Usar índice correcto de la clase PNEUMONIA desde class_labels
+if "PNEUMONIA" in class_labels:
+    pneumonia_label = "PNEUMONIA"
+else:
+    pneumonia_label = class_labels[1]  # asume que la segunda clase es PNEUMONIA
+
+metrics_values = [report[pneumonia_label][m] for m in metrics_names]
 
 plt.bar(metrics_names, metrics_values, color=["#4CAF50", "#2196F3", "#FF5722"])
 plt.ylim(0, 1)
-plt.title(f"Métricas de Rendimiento - Neumonía (Umbral={THRESHOLD})")
-plt.savefig(os.path.join(RESULTS_DIR, "metrics_bar_test.png"))
+plt.title(f"Métricas de Rendimiento - {pneumonia_label} (Umbral={THRESHOLD})")
+plt.savefig(os.path.join(RESULTS_DIR, f"metrics_bar_{pneumonia_label}.png"))
 plt.close()
+
 
 print("✅ Evaluación completada con umbral personalizado. Resultados guardados en carpeta 'results/'")
