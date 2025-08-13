@@ -9,6 +9,19 @@ Este proyecto implementa una red neuronal convolucional (CNN) para la detección
 Desarrollar un modelo de Deep Learning capaz de diferenciar entre radiografías de tórax normales y con neumonía, brindando una herramienta de apoyo al diagnóstico médico en entornos clínicos.
 ---
 
+## 📊 Rendimiento del Modelo
+
+- **Precisión global (Accuracy):** 94.8%
+- **Sensibilidad (Recall) para neumonía:** 99.3%  
+  _Prácticamente no se escapan casos positivos._
+- **Especificidad para casos normales:** 88.5%
+- **F1-Score global:** 94.7%
+- **Matriz de confusión en test set:**  
+  _(ver imagen o sección correspondiente)_
+
+> 🔍 **Estrategia adoptada:**  
+> Se prioriza la detección de neumonía, permitiendo falsos positivos que luego serán revisados en una segunda valoración médica.
+
 ## 📚 Navegación del Proyecto
 
 | Documento                                             | Descripción                                              |
@@ -83,15 +96,16 @@ pneumonia-dx
 
 ## 🧪 Fases del Proyecto
 
-| Etapa | Descripción                                         | Estado         |
-| ----- | --------------------------------------------------- | -------------- |
-| 1️⃣   | Carga y exploración del dataset                     | ✅ Completado   |
-| 2️⃣   | Preprocesamiento de imágenes y `ImageDataGenerator` | ✅ Completado   |
-| 3️⃣   | Construcción del modelo CNN                         | ✅ Completado   |
-| 4️⃣   | Entrenamiento con Early Stopping y validación       | ✅ Completado   |
-| 5️⃣   | Evaluación inicial y análisis de métricas           | ✅ Completado   |
-| 6️⃣   | Optimización de umbral y reducción de falsos positivos | 🔄 En progreso |
-| 7️⃣   | Despliegue web con Streamlit o Flask                | ⏳ Pendiente    |
+| Etapa | Descripción                                              | Estado         |
+| ----- | -------------------------------------------------------- | -------------- |
+| 1️⃣   | Carga y exploración del dataset                          | ✅ Completado   |
+| 2️⃣   | Preprocesamiento de imágenes y `ImageDataGenerator`      | ✅ Completado   |
+| 3️⃣   | Construcción del modelo CNN                              | ✅ Completado   |
+| 4️⃣   | Entrenamiento con Early Stopping y validación            | ✅ Completado   |
+| 5️⃣   | Evaluación inicial y análisis de métricas                | ✅ Completado   |
+| 6️⃣   | Ajuste de umbral y estrategia para falsos positivos      | ✅ Completado   |
+| 7️⃣   | Despliegue web con interfaz visual y heatmap explicativo | 🔄 En progreso |
+
 
 ---
 
@@ -124,15 +138,6 @@ pandas
 
 ---
 
-## ⚙️ Requisitos del Entorno
-
-```bash
-Python 3.10+
-TensorFlow >= 2.10
-matplotlib
-numpy
-pandas
-
 
 ## 👇 Instalación Rapida
 pip install -r requirements.txt
@@ -140,24 +145,24 @@ pip install -r requirements.txt
 
 ## 🚀 Próximas Mejoras
 
-- **Mejorar balance de clases**
+### Mejorar balance de clases
   - Ajustar umbral de decisión para reducir falsos positivos.
   - Usar `class_weight` y aumento de datos de la clase NORMAL.
 
-- **Aumentar robustez**
+### Aumentar robustez
   - Entrenar con más variedad de imágenes.
   - Aplicar data augmentation avanzada.
   - Probar arquitecturas como EfficientNet o DenseNet.
 
-- **Interpretabilidad**
+### Interpretabilidad
   - Integrar Grad-CAM para resaltar áreas de interés en radiografías.
 
-- **Integración clínica**
+### Integración clínica
   - Interfaz web clara para carga de imágenes y reporte automático.
   - Opción de exportar reportes PDF.
   - Doble validación médica.
 
-- **Seguridad y regulaciones**
+### Seguridad y regulaciones
   - Registro de predicciones.
   - Cumplimiento
 
